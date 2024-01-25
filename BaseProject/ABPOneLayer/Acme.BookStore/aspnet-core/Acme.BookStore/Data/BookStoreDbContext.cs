@@ -16,7 +16,7 @@ public class BookStoreDbContext : AbpDbContext<BookStoreDbContext>
         : base(options)
     {
     }
-
+    public virtual DbSet<Product> product { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

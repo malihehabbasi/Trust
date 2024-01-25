@@ -102,7 +102,7 @@ public class BookStoreModule : AbpModule
 {
     /* Single point to enable/disable multi-tenancy */
     private const bool IsMultiTenant = true;
-
+    
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
         var hostingEnvironment = context.Services.GetHostingEnvironment();
@@ -148,7 +148,7 @@ public class BookStoreModule : AbpModule
         {
             context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());
         }
-
+        // context.Services.AddAssemblyOf<IProductAppService>();
         ConfigureAuthentication(context);
         ConfigureBundles();
         ConfigureMultiTenancy();
@@ -260,6 +260,7 @@ public class BookStoreModule : AbpModule
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
             options.ConventionalControllers.Create(typeof(BookStoreModule).Assembly);
+            //options.ConventionalControllers.Create(typeof(IProductAppService).Assembly);
         });
     }
 
