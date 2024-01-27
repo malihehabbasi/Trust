@@ -16,14 +16,44 @@
   <div class="card mt-5">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-auto text-center">
-          <img
-            src="https://abp.io/assets/png/mastering-abp-framework.webp"
-            style="max-width: 400px"
-            class="w-100 mb-5 my-md-3"
-          />
+       
+
+
+        <div class="container">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Product </div>
+            </div>
+            <div class="card-body">
+              <!-- FORM FOR NEW TODO ITEMS -->
+              <form class="row row-cols-lg-auto g-3 align-items-center" (ngSubmit)="create()">
+                <!-- <div class="col-12">
+                  <div class="input-group">
+                    <input name="NewTodoText" type="text" [(ngModel)]="newid" class="form-control" placeholder=" ID" />
+                  </div>
+                </div> -->
+                <div class="col-12">
+                  <div class="input-group">
+                    <input name="NewTodoText" type="text" [(ngModel)]="newname" class="form-control" placeholder="name" />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-group">
+                    <input name="NewTodoText" type="text" [(ngModel)]="newtype" class="form-control" placeholder="type" />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+              <!-- TODO ITEMS LIST -->
+              
+            </div>
+          </div>
         </div>
-        <div class="col-md d-flex align-items-center">
+        
+
+        <!-- <div class="col-md d-flex align-items-center">
           <div class="pe-0 pe-md-4">
             <small class="text-uppercase text-muted">THE OFFICIAL GUIDE</small>
             <h2 class="mb-4">Mastering ABP Framework</h2>
@@ -47,7 +77,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
