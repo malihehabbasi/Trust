@@ -22,6 +22,7 @@ public class BookStoreDbContext : AbpDbContext<BookStoreDbContext>
         base.OnModelCreating(builder);
 
         /* Include modules to your migration db context */
+        /* fsdfsd*/
 
         builder.ConfigurePermissionManagement();
         builder.ConfigureSettingManagement();
