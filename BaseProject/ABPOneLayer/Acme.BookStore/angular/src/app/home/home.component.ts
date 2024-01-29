@@ -14,6 +14,9 @@ export class HomeComponent {
   newid:string='';
   newname:string='';
   newtype:string='';
+  createProductDtoItems: CreateProductDto[];
+
+  
 
   createProductDto :CreateProductDto={
     id:0,
@@ -26,8 +29,14 @@ export class HomeComponent {
     , private productService: ProductService
     ) {}
 
-
-  ProductDto
+    ngOnInit(): void {
+      
+      this.productService.getList().subscribe((result) => {
+        this.createProductDtoItems=result;
+       console.log(this.createProductDtoItems);
+      });
+    }
+  
   login() {
     this.authService.navigateToLogin();
   }
