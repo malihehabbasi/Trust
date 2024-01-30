@@ -16,12 +16,13 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
 import { FeatureManagementModule } from '@abp/ng.feature-management';
 import { AbpOAuthModule } from '@abp/ng.oauth';
 import { ThemeBasicModule } from '@abp/ng.theme.basic';
-
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ButtonModule,
     CoreModule.forRoot({
       environment,
       registerLocaleFn: registerLocale(),
