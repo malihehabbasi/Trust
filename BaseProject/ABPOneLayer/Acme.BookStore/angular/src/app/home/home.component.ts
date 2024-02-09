@@ -18,13 +18,18 @@ export class HomeComponent {
   newid:string='';
   newname:string='';
   newtype:string='';
+  datasourcetable:any[];
   createProductDtoItems: CreateProductDto[];
   stateOptions: any[] = [{label: 'Off', value: 'off'}, {label: 'On', value: 'on'}];
 
   value: string = 'off';
   
 
-
+  cols = [
+    { field: "name", header: "name" },
+    { field: "type", header: "type" },
+    { field: "id", header: "id" }
+];
   createProductDto :CreateProductDto={
     id:0,
     name:'',
@@ -60,12 +65,17 @@ export class HomeComponent {
 
   getList():void {
     this.productService.getList().subscribe((result) => {
-      this.createProductDtoItems=result;
+      let a = JSON.stringify(result);
+      let b=a.substring(a.indexOf('['),a.length-1);
     
-
-     for (var i = 0; i < this.createProductDtoItems.length; i++){
-      console.log("sss");
-     }
+       this.datasourcetable= JSON.parse(b);
+   
+   
+   for (var item of this.datasourcetable){
+         console.log(item);
+        }
+        
+   
      
 
 
