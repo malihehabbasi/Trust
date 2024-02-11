@@ -73,7 +73,35 @@
           </div>
 
           <div>
-            <p-table #dt [columns]="cols"  
+
+            <div class="card">
+              <p-table [value]="datasourcetable" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+                
+                  <ng-template pTemplate="header">
+                      <tr>
+                          <th>id</th>
+                          <th>name</th>
+                          <th>type</th>
+                          <th>َAction</th>
+                          
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-datasourcetable>
+                      <tr>
+                          <td>{{ datasourcetable.id }}</td>
+                          <td>{{ datasourcetable.name }}</td>
+                          <td>{{ datasourcetable.type }}</td>
+                          <td (click)="delete( datasourcetable.id )"><a href="#">Delete</a></td>
+
+                         
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="summary"> Footer </ng-template>
+              </p-table>
+          </div>
+
+
+            <!-- <p-table #dt [columns]="cols" styleClass="p-datatable-gridlines" 
             [value]="datasourcetable" responsiveLayout="scroll"> 
             <ng-template pTemplate="header" let-columns> 
                 <tr> 
@@ -82,14 +110,17 @@
                     </th> 
                 </tr> 
             </ng-template> 
-            <ng-template pTemplate="body" let-rowData let-columns="columns"> 
+            <ng-template pTemplate="body" let-rowData let-datasourcetable> 
                 <tr [pSelectableRow]="rowData"> 
                     <td *ngFor="let col of columns"> 
                         {{ rowData[col.field] }} 
                     </td> 
+                    <td (click)="delete(rowData[col.])">
+                      <span class="danger">Delele </span>
+                    </td>
                 </tr> 
             </ng-template> 
-          </p-table>
+          </p-table> -->
           </div>
 
 

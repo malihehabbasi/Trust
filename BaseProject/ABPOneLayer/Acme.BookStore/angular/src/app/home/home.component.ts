@@ -59,6 +59,7 @@ export class HomeComponent {
     this.productService.create(this.createProductDto).subscribe((result) => {
       this.newname = "";
       this.newtype = "";
+      this.getList();
     });
   }
 
@@ -69,16 +70,16 @@ export class HomeComponent {
       let b=a.substring(a.indexOf('['),a.length-1);
     
        this.datasourcetable= JSON.parse(b);
-   
-   
-   for (var item of this.datasourcetable){
-         console.log(item);
-        }
-        
-   
-     
-
-
     });
+
+
+}
+    
+delete(id):void{
+
+  this.productService.delete(id).subscribe((result) => {
+    this.getList();
+  });
+
   }
 }
