@@ -12,6 +12,20 @@
     }
 }
 
+[dir="rtl"]{
+  *{
+    direction: rtl !important;
+    text-align: initial;
+  }
+}
+[dir="ltr"]{
+  *{
+    direction: ltr !important;
+    text-align: initial;
+  }
+}
+
+
 @keyframes donut-spin {
   0% {
     transform: rotate(0deg);

@@ -9,6 +9,13 @@ function configureRoutes(routesService: RoutesService) {
   return () => {
     routesService.add([
       {
+        path: '/Test',
+        name: 'MyMenu',
+        iconClass: 'fas fa-question-circle',
+        order: 101,
+        layout: eLayoutType.application,
+      },
+      {
         path: '/',
         name: '::Menu:Home',
         iconClass: 'fas fa-home',
